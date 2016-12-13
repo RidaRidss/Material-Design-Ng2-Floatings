@@ -1,0 +1,37 @@
+<div style="background-color:black;color:#fff" class="mfb-container">
+  <h1>
+  Material-Design-Ng2-Floatings
+  </h1>
+
+  <em>Standalone Angular directive for Material floating action buttons. 
+Shamelessly Openly inspired by Google Inbox, ng-material-floating-button Evernote and Path.</em>
+<br><br>
+<em>It works out of the box with no other dependencies apart from Angular, but plays nicely with Angular Material.</em>
+<br><br>
+<em>choose an effect from the dropdown below and hover over the button on the corner of the screen</em>
+<b>Another <a style="color:skyblue" href="http://nobitagit.github.io/ng-material-floating-button/index.html" target="_blank">Demo here</a></b>
+<br><br>
+  <form>
+   &nbsp;&nbsp;<strong>Position</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Effect</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Transition</strong>
+    <br>
+    <select [(ngModel)]="config.placment" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let placment of placements" [value]="placment.value">{{placment.key}}</option>
+    </select>
+    <select [(ngModel)]="config.effect" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let effect of effects" [value]="effect.value">{{effect.key}}</option>
+    </select>
+    <select [(ngModel)]="config.toggle" [ngModelOptions]="{standalone: true}">
+      <option *ngFor="let toggle of toggles" [value]="toggle">{{toggle}}</option>
+    </select>
+  </form>
+</div>
+
+<ng2-floating-button 
+  [placement]="config.placment" 
+  [effect]="config.effect" 
+  [label]="config.label" 
+  [iconClass]="config.iconClass" 
+  [activeIconClass]="config.activeIconClass"
+  [toggle]="config.toggle"
+  [buttons]="buttons">
+</ng2-floating-button>
